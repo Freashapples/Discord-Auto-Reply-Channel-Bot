@@ -30,10 +30,6 @@ headers = {
 def get_latest_messages(channel_id):
     response = requests.get(f'{discord_api_endpoint}/channels/{channel_id}/messages', headers=headers)
     data = response.json()
-
-    with open(r"C:\Users\asmie\Downloads\DiscordBot-main\DiscordBot-main\info.txt",'a') as f:
-        f.write(json.dumps(data))
-
     return data[0]
 
 # Function to send a message to a channel
